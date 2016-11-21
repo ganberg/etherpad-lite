@@ -28,6 +28,8 @@ if [ "$(id -u)" -eq 0 ] && [ $ignoreRoot -eq 0 ]; then
    fi
 fi
 
+sed -i.bak 's/9001/'$PORT'/' $SCRIPTPATH/settings.json.template
+
 #prepare the enviroment
 bin/installDeps.sh $* || exit 1
 
@@ -36,7 +38,7 @@ echo "Started Etherpad..."
 
 SCRIPTPATH=`pwd -P`
 
-sed -i.bak 's/9001/'$PORT'/' $SCRIPTPATH/settings.json.template
+
 
 exec node "$SCRIPTPATH/node_modules/ep_etherpad-lite/node/server.js" $*
 
