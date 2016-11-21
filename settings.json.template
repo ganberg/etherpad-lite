@@ -16,7 +16,7 @@
 
   //IP and port which etherpad should bind at
   "ip": "0.0.0.0",
-  "port" : 9001,
+  "port" : PORT,
 
   // Option to hide/show the settings.json in admin page, default option is set to true
   "showSettingsInAdminPage" : true,
@@ -38,22 +38,15 @@
 
   //The Type of the database. You can choose between dirty, postgres, sqlite and mysql
   //You shouldn't use "dirty" for for anything else than testing or development
-  "dbType" : "dirty",
-  //the database specific settings
-  "dbSettings" : {
-                   "filename" : "var/dirty.db"
-                 },
 
-  /* An Example of MySQL Configuration
-   "dbType" : "mysql",
+   "dbType" : "postgres",
    "dbSettings" : {
-                    "user"    : "root",
-                    "host"    : "localhost",
-                    "password": "",
-                    "database": "store",
-                    "charset" : "utf8mb4"
+                    "user"    : "DB_USER",
+                    "host"    : "DB_HOSTNAME",
+                    "password": "DB_PASSWORD",
+                    "database": "DB_NAME"
                   },
-  */
+
 
   //the default text of a pad
   "defaultPadText" : "Welcome to Etherpad!\n\nThis pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!\n\nGet involved with Etherpad at http:\/\/etherpad.org\n",
