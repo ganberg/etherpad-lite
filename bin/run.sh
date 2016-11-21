@@ -28,7 +28,7 @@ if [ "$(id -u)" -eq 0 ] && [ $ignoreRoot -eq 0 ]; then
    fi
 fi
 
-sed -i.bak 's/9001/'$PORT'/' $SCRIPTPATH/settings.json.template
+sed -i.bak 's/9001/'$PORT'/' /opt/etherpad/settings.json.template
 
 #prepare the enviroment
 bin/installDeps.sh $* || exit 1
