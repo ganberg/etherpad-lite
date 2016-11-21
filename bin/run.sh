@@ -35,5 +35,8 @@ bin/installDeps.sh $* || exit 1
 echo "Started Etherpad..."
 
 SCRIPTPATH=`pwd -P`
+
+exec sed 's/"port" : 9001/"port" : $PORT/' $SCRIPTPATH/../settings.json.template
+
 exec node "$SCRIPTPATH/node_modules/ep_etherpad-lite/node/server.js" $*
 
