@@ -8,6 +8,7 @@ COPY . /opt/etherpad
 
 WORKDIR /opt/etherpad
 
+RUN apt-get update
 RUN apt-get install gzip git curl python libssl-dev pkg-config build-essential
 
 CMD /opt/etherpad/bin/run.sh --root
