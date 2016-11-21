@@ -36,7 +36,7 @@ echo "Started Etherpad..."
 
 SCRIPTPATH=`pwd -P`
 
-sed -i 's/9001/$PORT/' $SCRIPTPATH/settings.json.template
+sed -i.bak 's/9001/'$PORT'/' $SCRIPTPATH/settings.json.template
 
 exec node "$SCRIPTPATH/node_modules/ep_etherpad-lite/node/server.js" $*
 
